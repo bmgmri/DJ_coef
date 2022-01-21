@@ -23,7 +23,7 @@ def conv(x):
 
 uploaded_file = st.file_uploader("Choose a file")
 if uploaded_file is not None:
-    x, y   = np.genfromtxt( datain,  delimiter="\t", unpack=True)
+    x, y   = np.genfromtxt( uploaded_file,  delimiter="\t", unpack=True)
     st.write(x, y)
 
 ##------------------------------------------------------------------
