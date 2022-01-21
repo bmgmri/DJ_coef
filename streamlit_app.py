@@ -36,6 +36,8 @@ if uploaded_file is not None:
     smoothed= savgol_filter(y, 31, 3)
     
     fig, ax = plt.subplots()
+    ax.title("Smooth line check")
+    ax.fill_between(x, y, 0, alpha=0.7)
     ax.plot(x, smoothed,  lw=2, c='k')
     st.pyplot(fig)
  
