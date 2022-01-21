@@ -8,7 +8,7 @@ Created on Thu Dec 12 14:27:27 2019
 import streamlit as st
 import numpy as np
 #import sys
-import matplotlib as plt
+import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
 from scipy.integrate import trapz, simps
 from scipy.signal import savgol_filter
@@ -24,7 +24,7 @@ def conv(x):
 uploaded_file = st.file_uploader("Choose a file")
 if uploaded_file is not None:
     x, y   = np.genfromtxt( uploaded_file,  delimiter="\t", unpack=True)
-    st.write(x, y)
+    #st.write(x, y)
 
 ##------------------------------------------------------------------
 ## FIT with initial shape  DATA 1 GAUSSIAN
@@ -34,6 +34,7 @@ if uploaded_file is not None:
 
 ## get x of max
     smoothed= savgol_filter(y, 31, 3)
+    
     fig, ax = plt.subplots()
     ax.plot(x, smoothed,  lw=2, c='k')
     st.pyplot(fig)
@@ -84,7 +85,7 @@ if uploaded_file is not None:
     totalarea=trapz(y, x)
     gaussarea=trapz(Gaussian(x, *popt),x)
     percentage=100*gaussarea/totalarea
-    print(datain, '{:18.3f}'.format(totalarea), '{:18.3f}'.format(gaussarea), '{:18.3f}'.format(percentage))
+    st.write(uploaded_file, '{:18.3f}'.format(totalarea), '{:18.3f}'.format(gaussarea), '{:18.3f}'.format(percentage))
 
 '''
 print()
