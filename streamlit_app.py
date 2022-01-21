@@ -21,7 +21,7 @@ from scipy.signal import savgol_filter
 def conv(x):
     return x.replace(',', '.').encode()
 
-st.title("DJ COEFF")
+st.title("DJ COEFF ver 0.1")
 
 uploaded_file = st.file_uploader("Choose a file")
 if uploaded_file is not None:
