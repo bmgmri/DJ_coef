@@ -8,7 +8,7 @@ Created on Thu Dec 12 14:27:27 2019
 import streamlit as st
 import numpy as np
 #import sys
-from matplotlib import pyplot as plt
+from matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
 from scipy.integrate import trapz, simps
 from scipy.signal import savgol_filter
@@ -62,7 +62,7 @@ fig, ax = plt.subplots()
 ax.plot(colax, colay,  lw=2, c='k')
 ax.plot(colax , Gaussian(colax, *popt), label='0 DFO', lw=2, c='r')
 plt.savefig('curves.png', dpi=200 )
-st.image('curves.png')
+st.pyplot(fig)
 
 fig, ax = plt.subplots()
 #ax.plot(x, y,  lw=2, c='k')
@@ -70,7 +70,7 @@ ax.fill_between(x, y, 0, alpha=0.7)
 ax.plot(x , Gaussian(x, *popt), label='0 DFO', lw=2, c='r')
 #ax.plot(x , y - Gaussian(x, *popt), label='0 DFO', lw=2, c='k')
 plt.savefig('fit.png', dpi=200 )
-st.image('fit.png')
+st.pyplot(fig) 
 
 '''
 print()
