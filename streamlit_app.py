@@ -9,9 +9,9 @@ import streamlit as st
 import numpy as np
 #import sys
 import matplotlib.pyplot as plt
-from scipy.optimize import curve_fit
-from scipy.integrate import trapz, simps
-from scipy.signal import savgol_filter
+#from scipy.optimize import curve_fit
+#from scipy.integrate import trapz, simps
+#from scipy.signal import savgol_filter
 
 
 ## Read data  -> read Ascii file -> reshape
