@@ -30,7 +30,7 @@ if uploaded_file is not None:
 ## FIT with initial shape  DATA 1 GAUSSIAN
 ##------------------------------------------------------------------
     def Gaussian(x, mean, h1 , sd ):
-        return  h1*(1/sd*np.sqrt(2*np.pi) ) * np.exp(-0.5*((x-mean)/sd)**2)  
+        return  h1 * np.exp(-0.5*((x-mean)/sd)**2)  
 
 ## get x of max
     smoothed= savgol_filter(y, 31, 3)
@@ -90,9 +90,9 @@ if uploaded_file is not None:
     gaussarea=trapz(Gaussian(x, *popt),x)
     percentage=100*gaussarea/totalarea
     st.write()
-    st.write(" GAUSS AREA = "         , '{:18.3f}'.format(gaussarea) )
-    st.write(" TOTAL AREA = "         , '{:18.3f}'.format(totalarea) )
-    st.write(" PERCENTAGE_GAUSS % = " , '{:18.3f}'.format(percentage) )
+    st.write(" GAUSS AREA =  "         , '{:18.3f}'.format(gaussarea) )
+    st.write(" TOTAL AREA =  "         , '{:18.3f}'.format(totalarea) )
+    st.write(" PERCENTAGE_GAUSS % =  " , '{:18.3f}'.format(percentage) )
     
   
 
