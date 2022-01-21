@@ -74,18 +74,22 @@ if uploaded_file is not None:
     
     st.write()
     st.write("--------------------------------")
-    st.write("   Fit Results DATA 0: ")
-    st.write("--------------------------------")
+    st.write("   Fit Results DATA 0: ")    
     st.write("Mean    = ",popt[0] )
     st.write("Amplitude  = ",popt[1] )
     st.write("SD      = ",popt[2] )
+    st.write("--------------------------------")
     
     # CALCULATE INTEGRALS
 
     totalarea=trapz(y, x)
     gaussarea=trapz(Gaussian(x, *popt),x)
     percentage=100*gaussarea/totalarea
-    st.write(" TOTAL AREA     GAUSS AREA     PERCENTAGE_GAUSS % ")
-    st.write(  '{:18.3f}'.format(totalarea), '{:18.3f}'.format(gaussarea), '{:18.3f}'.format(percentage))
+    st.write()
+    st.write(" GAUSS AREA = "         , '{:18.3f}'.format(gaussarea) )
+    st.write(" TOTAL AREA = "         , '{:18.3f}'.format(totalarea) )
+    st.write(" PERCENTAGE_GAUSS % = " , '{:18.3f}'.format(percentage) )
+    
+  
 
  
