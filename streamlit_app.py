@@ -25,7 +25,7 @@ st.title("DJ COEFF ver 0.1")
 
 uploaded_file = st.file_uploader("Choose a file")
 if uploaded_file is not None:
-    x, y   = np.genfromtxt( (conv(x) for x in open(uploaded_file)),  delimiter="\t", unpack=True)
+    x, y   = np.genfromtxt( uploaded_file,  delimiter="\t", unpack=True)
     st.write(x, y)
 
 ##------------------------------------------------------------------
