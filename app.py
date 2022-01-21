@@ -42,7 +42,7 @@ st.title("DJ COEFF")
 
 
 c29, c30, c31 = st.columns([1, 6, 1])
-
+ 
 with c30:
 
     uploaded_file = st.file_uploader(
@@ -58,7 +58,7 @@ with c30:
 
         x, y   = np.genfromtxt( (conv(x) for x in open(uploaded_file)),  delimiter="\t", unpack=True)
         
-        file_container.write(shows)
+        st.write(x, y)
 
     else:
         st.info(
@@ -68,8 +68,8 @@ with c30:
         )
 
         st.stop()
+ 
 
-from st_aggrid import GridUpdateMode, DataReturnMode
 fig, ax = plt.subplots()
 ax.plot(x, y,  lw=2, c='k')
 st.pyplot(fig)
