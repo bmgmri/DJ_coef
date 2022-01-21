@@ -21,6 +21,8 @@ from scipy.signal import savgol_filter
 def conv(x):
     return x.replace(',', '.').encode()
 
+st.title("DJ COEFF")
+
 uploaded_file = st.file_uploader("Choose a file")
 if uploaded_file is not None:
     x, y   = np.genfromtxt( uploaded_file,  delimiter="\t", unpack=True)
