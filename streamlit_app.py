@@ -8,7 +8,7 @@ Created on Thu Dec 12 14:27:27 2019
 import streamlit as st
 import numpy as np
 #import sys
-from matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
 from scipy.integrate import trapz, simps
 from scipy.signal import savgol_filter
