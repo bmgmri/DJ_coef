@@ -60,12 +60,14 @@ if uploaded_file is not None:
     popt , pcov  = curve_fit(  Gaussian, colax, colay, p0=guess , bounds=([x0, 0, 0], np.inf))
 
     fig, ax = plt.subplots()
+    plt.title('Fitting of half gaussian')
     ax.plot(colax, colay,  lw=2, c='k')
     ax.plot(colax , Gaussian(colax, *popt), label='0 DFO', lw=2, c='r')
     plt.savefig('curves.png', dpi=200 )
     st.pyplot(fig)
 
     fig, ax = plt.subplots()
+    plt.title('Final plot:  Gaussian vs total')
     #ax.plot(x, y,  lw=2, c='k')
     ax.fill_between(x, y, 0, alpha=0.7)
     ax.plot(x , Gaussian(x, *popt), label='0 DFO', lw=2, c='r')
