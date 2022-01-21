@@ -74,10 +74,10 @@ if uploaded_file is not None:
     
     st.write()
     st.write("--------------------------------")
-    st.write("   Fit Results DATA 0: ")    
-    st.write("Mean    = ",popt[0] )
-    st.write("Amplitude  = ",popt[1] )
-    st.write("SD      = ",popt[2] )
+    st.write("   Fit Results : ")    
+    st.write("Center    = ",popt[0] )
+    st.write("Amplitude = ",popt[1] )
+    st.write("SD        = ",popt[2] )
     st.write("--------------------------------")
     
     # CALCULATE INTEGRALS
