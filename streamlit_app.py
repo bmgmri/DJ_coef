@@ -26,7 +26,7 @@ st.title("DJ COEFF ver 0.1")
 uploaded_file = st.file_uploader("Choose a file")
 if uploaded_file is not None:
     x, y   = np.genfromtxt( uploaded_file,  delimiter="\t", unpack=True)
-    st.write(x, y)
+    #st.write(x, y)
 
 ##------------------------------------------------------------------
 ## FIT with initial shape  DATA 1 GAUSSIAN
