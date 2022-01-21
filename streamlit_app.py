@@ -79,9 +79,9 @@ if uploaded_file is not None:
     st.write()
     st.write("--------------------------------")
     st.write("   Fit Results : ")    
-    st.write("Center    = ",popt[0] )
-    st.write("Amplitude = ",popt[1] )
-    st.write("SD        = ",popt[2] )
+    st.write("Center    = ",'{:10.3f}'.format(popt[0]) )
+    st.write("Amplitude = ",'{:10.3f}'.format(popt[1]) )
+    st.write("SD        = ",'{:10.3f}'.format(popt[2]) )
     st.write("--------------------------------")
     
     # CALCULATE INTEGRALS
