@@ -71,21 +71,22 @@ if uploaded_file is not None:
     plt.savefig('fit.png', dpi=200 )
     st.pyplot(fig) 
 
-    '''
-    print()
-    print("--------------------------------")
-    print("   Fit Results DATA 0: ")
-    print("--------------------------------")
-    print("Mean    = ",popt[0] )
-    print("Amplitude  = ",popt[1] )
-    print("SD      = ",popt[2] )
-    '''
+    
+    st.write()
+    st.write("--------------------------------")
+    st.write("   Fit Results DATA 0: ")
+    st.write("--------------------------------")
+    st.write("Mean    = ",popt[0] )
+    st.write("Amplitude  = ",popt[1] )
+    st.write("SD      = ",popt[2] )
+    
     # CALCULATE INTEGRALS
 
     totalarea=trapz(y, x)
     gaussarea=trapz(Gaussian(x, *popt),x)
     percentage=100*gaussarea/totalarea
-    st.write(uploaded_file, '{:18.3f}'.format(totalarea), '{:18.3f}'.format(gaussarea), '{:18.3f}'.format(percentage))
+    st.write(" TOTAL AREA     GAUSS AREA     PERCENTAGE_GAUSS % ")
+    st.write(  '{:18.3f}'.format(totalarea), '{:18.3f}'.format(gaussarea), '{:18.3f}'.format(percentage))
 
 '''
 print()
