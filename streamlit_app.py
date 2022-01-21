@@ -88,17 +88,4 @@ if uploaded_file is not None:
     st.write(" TOTAL AREA     GAUSS AREA     PERCENTAGE_GAUSS % ")
     st.write(  '{:18.3f}'.format(totalarea), '{:18.3f}'.format(gaussarea), '{:18.3f}'.format(percentage))
 
-'''
-print()
-print("--------------------------------")
-print("   Fit Results DATA 0: ")
-print("--------------------------------")
-print("Mean       = ",popt[0] )
-print("Amplitude  = ",popt[1] )
-print("SD         = ",popt[2] )
-print("Mean    = ",popt[3] )
-print("Amplitude  = ",popt[4] )
-print("SD      = ",popt[5] )
-print("Offset     = ",popt[6] )
-'''
-#print(datain, *popt)
+ 
