@@ -15,10 +15,16 @@ from scipy.signal import savgol_filter
 
 
 ## Read data  -> read Ascii file -> reshape
-datain=sys.argv[1]
+#datain=sys.argv[1]
 #datain='50.dat'
-x, y   = np.genfromtxt( datain,  delimiter="\t", unpack=True)
 
+def conv(x):
+    return x.replace(',', '.').encode()
+
+uploaded_file = st.file_uploader("Choose a file")
+if uploaded_file is not None:
+    x, y   = np.genfromtxt( datain,  delimiter="\t", unpack=True)
+    st.write(x, y)
 
 ##------------------------------------------------------------------
 ## FIT with initial shape  DATA 1 GAUSSIAN
