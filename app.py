@@ -72,7 +72,7 @@ with c30:
 from st_aggrid import GridUpdateMode, DataReturnMode
 fig, ax = plt.subplots()
 ax.plot(x, y,  lw=2, c='k')
-
+st.pyplot(fig)
  
 
  
