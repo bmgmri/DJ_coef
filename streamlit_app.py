@@ -22,7 +22,7 @@ def conv(x):
     return x.replace(',', '.').encode()
 
 st.title("DJ COEFF ver 0.2")
-st.image('https://github.com/bmgmri/DJ_coef/Smoke-01.png', width=100 )
+st.image('https://bmgmri.github.io/DJ_coef/Smoke-01.png', width=100 )
 
 uploaded_file = st.file_uploader("Choose a file")
 st.info(       f"""
