@@ -22,7 +22,7 @@ def conv(x):
     return x.replace(',', '.').encode()
 
 st.title("DJ COEFF ver 0.2")
-
+st.image('https://github.com/bmgmri/DJ_coef//Smoke-01.png')
 uploaded_file = st.file_uploader("Choose a file")
 st.info(       f"""
                 👆 Upload a .xlsx excel file with an histogram in the first 2 columns
