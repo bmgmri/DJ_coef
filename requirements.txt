@@ -3,3 +3,4 @@ streamlit-aggrid==0.2.2-2
 matplotlib
 scipy
 pandas
+xlrd >= 1.0.0
