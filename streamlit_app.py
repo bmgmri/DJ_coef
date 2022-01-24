@@ -88,7 +88,7 @@ if uploaded_file is not None:
     plt.savefig('fit.png', dpi=200 )
     st.pyplot(fig) 
 
-    st.success('NORMAL TERMINATION -> Agur !')
+    st.success('FITTING FINISHED, CHECK RESULTS: ')
     
     st.write()
     st.write("--------------------------------")
@@ -112,5 +112,7 @@ if uploaded_file is not None:
     st.write(" DJ COEFF           =  gaussarea/totalarea = " , '{:18.3f}'.format(djcoeff) )
     
     st.write("--------------------------------")
+    
+    st.success('NORMAL TERMINATION -> Agur !')
 
  
