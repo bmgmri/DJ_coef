@@ -24,6 +24,10 @@ def conv(x):
 st.title("DJ COEFF ver 0.2")
 
 uploaded_file = st.file_uploader("Choose a file")
+st.info(       f"""
+                👆 Upload a .xls excel file with an histogram in the first 2 columns
+                """
+        )
 if uploaded_file is not None:
     #x, y   = np.genfromtxt( uploaded_file,  delimiter="\t", unpack=True)
     #st.write(x, y)
