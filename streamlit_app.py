@@ -25,7 +25,7 @@ st.title("DJ COEFF ver 0.2")
 
 uploaded_file = st.file_uploader("Choose a file")
 st.info(       f"""
-                👆 Upload a .xls excel file with an histogram in the first 2 columns
+                👆 Upload a .xlsx excel file with an histogram in the first 2 columns
                 """
         )
 if uploaded_file is not None:
@@ -45,6 +45,7 @@ if uploaded_file is not None:
         return  h1 * np.exp(-0.5*((x-mean)/sd)**2)  
 
 ## get x of max
+ 
     smoothed= savgol_filter(y, 31, 3)
     
     fig, ax = plt.subplots()
@@ -66,7 +67,6 @@ if uploaded_file is not None:
     colay=y[shift+idmax:]
 
     #print(idmax, x0,ymax)
-
 
     guess = [x0, ymax, x[-1]/10 ]
     popt , pcov  = curve_fit(  Gaussian, colax, colay, p0=guess , bounds=([x0, 0, 0], np.inf))
@@ -105,6 +105,7 @@ if uploaded_file is not None:
     st.write(" GAUSS AREA =  "         , '{:18.3f}'.format(gaussarea) )
     st.write(" TOTAL AREA =  "         , '{:18.3f}'.format(totalarea) )
     st.write(" PERCENTAGE_GAUSS % =  " , '{:18.3f}'.format(percentage) )
+    st.write(" DJ COEFF           =  gaussarea/totalarea = " , '{:18.3f}'.format(percentage) )
     
   
 
