@@ -107,6 +107,6 @@ if uploaded_file is not None:
     st.write(" PERCENTAGE_GAUSS % =  " , '{:18.3f}'.format(percentage) )
     st.write(" DJ COEFF           =  gaussarea/totalarea = " , '{:18.3f}'.format(percentage) )
     
-  
+    st.write("--------------------------------")
 
  
