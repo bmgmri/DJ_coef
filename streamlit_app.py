@@ -49,11 +49,6 @@ if uploaded_file is not None:
  
     smoothed= savgol_filter(y, 31, 3)
     
-    fig, ax = plt.subplots()
-    plt.title('Smooth line check')
-    ax.fill_between(x, y, 0, alpha=0.7)
-    ax.plot(x, smoothed,  lw=2, c='k')
-    st.pyplot(fig)
  
     ## filtramos el primer 20% de datos para buscar el maximo
     shift= x.shape[0] // 5
@@ -66,7 +61,13 @@ if uploaded_file is not None:
     # separamos la curva a partir del maximo
     colax=x[shift+idmax:]
     colay=y[shift+idmax:]
-
+    
+    fig, ax = plt.subplots()
+    plt.title('Smooth line check')
+    ax.fill_between(x, y, 0, alpha=0.7)
+    ax.plot(x, smoothed,  lw=2, c='k')
+    plt.vlines(x0, 0, 1.2*ymax, colors='gray', linestyles='dashed')
+    st.pyplot(fig)
     #print(idmax, x0,ymax)
 
     guess = [x0, ymax, x[-1]/10 ]
