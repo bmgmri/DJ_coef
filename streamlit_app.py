@@ -88,6 +88,7 @@ if uploaded_file is not None:
     plt.savefig('fit.png', dpi=200 )
     st.pyplot(fig) 
 
+    st.success('NORMAL TERMINATION -> Agur !')
     
     st.write()
     st.write("--------------------------------")
