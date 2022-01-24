@@ -28,7 +28,7 @@ if uploaded_file is not None:
     #x, y   = np.genfromtxt( uploaded_file,  delimiter="\t", unpack=True)
     #st.write(x, y)
     import pandas as pd
-    WS = pd.read_excel('test.xlsx')
+    WS = pd.read_excel(uploaded_file)
     WS_array = np.array(WS)
     x=WS_array[:,0]
     y=WS_array[:,1]
