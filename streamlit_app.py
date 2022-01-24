@@ -63,7 +63,7 @@ if uploaded_file is not None:
     colay=y[shift+idmax:]
     
     fig, ax = plt.subplots()
-    plt.title('Smooth line check and find maximum ')
+    plt.title('Smooth line and find maximum ')
     ax.fill_between(x, y, 0, alpha=0.7)
     ax.plot(x, smoothed,  lw=2, c='k')
     plt.vlines(x0, 0, 1.1*ymax, colors='gray', linestyles='dashed')
