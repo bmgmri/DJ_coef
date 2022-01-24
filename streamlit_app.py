@@ -101,11 +101,13 @@ if uploaded_file is not None:
     totalarea=trapz(y, x)
     gaussarea=trapz(Gaussian(x, *popt),x)
     percentage=100*gaussarea/totalarea
+    djcoeff=gaussarea/totalarea
+    
     st.write()
     st.write(" GAUSS AREA =  "         , '{:18.3f}'.format(gaussarea) )
     st.write(" TOTAL AREA =  "         , '{:18.3f}'.format(totalarea) )
     st.write(" PERCENTAGE_GAUSS % =  " , '{:18.3f}'.format(percentage) )
-    st.write(" DJ COEFF           =  gaussarea/totalarea = " , '{:18.3f}'.format(percentage) )
+    st.write(" DJ COEFF           =  gaussarea/totalarea = " , '{:18.3f}'.format(djcoeff) )
     
     st.write("--------------------------------")
 
