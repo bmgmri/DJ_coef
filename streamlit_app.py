@@ -21,12 +21,17 @@ from scipy.signal import savgol_filter
 def conv(x):
     return x.replace(',', '.').encode()
 
-st.title("DJ COEFF ver 0.1")
+st.title("DJ COEFF ver 0.2")
 
 uploaded_file = st.file_uploader("Choose a file")
 if uploaded_file is not None:
-    x, y   = np.genfromtxt( uploaded_file,  delimiter="\t", unpack=True)
+    #x, y   = np.genfromtxt( uploaded_file,  delimiter="\t", unpack=True)
     #st.write(x, y)
+    import pandas as pd
+    WS = pd.read_excel('test.xlsx')
+    WS_array = np.array(WS)
+    x=WS_array[:,0]
+    y=WS_array[:,1]
 
 ##------------------------------------------------------------------
 ## FIT with initial shape  DATA 1 GAUSSIAN
