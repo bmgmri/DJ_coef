@@ -37,7 +37,7 @@ if uploaded_file is not None:
     if uploaded_file.endswith('.xlsx') or uploaded_file.endswith('.xls'):
             df = pd.read_excel(uploaded_file)
     else:
-            df = pd.read_csv(file_path, delimiter='\t', engine='python')
+            df = pd.read_csv(uploaded_file, delimiter='\t', engine='python')
         
         # Convertir a numpy array y asegurar tipos numéricos
     data = df.values.astype(float)
