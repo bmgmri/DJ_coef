@@ -40,7 +40,7 @@ if uploaded_file is not None:
             df = pd.read_csv(file_path, delimiter='\t', engine='python')
         
         # Convertir a numpy array y asegurar tipos numéricos
-        data = df.values.astype(float)
+    data = df.values.astype(float)
 
     x = data[:, 0]
     y = data[:, 1]
