@@ -21,7 +21,7 @@ from scipy.signal import savgol_filter
 def conv(x):
     return x.replace(',', '.').encode()
 
-st.title("DJ COEFF ver 0.2")
+st.title("DJ COEFF ver 250506")
 st.image('https://raw.githubusercontent.com/bmgmri/DJ_coef/main/Smoke-01.png', width=100 )
 
 uploaded_file = st.file_uploader("Choose a file")
@@ -34,10 +34,16 @@ if uploaded_file is not None:
     #st.write(x, y)
     
     import pandas as pd
-    WS = pd.read_excel(uploaded_file)
-    WS_array = np.array(WS)
-    x=WS_array[:,0]
-    y=WS_array[:,1]
+    if uploaded_file.endswith('.xlsx') or uploaded_file.endswith('.xls'):
+            df = pd.read_excel(uploaded_file)
+        else:
+            df = pd.read_csv(file_path, delimiter='\t', engine='python')
+        
+        # Convertir a numpy array y asegurar tipos numéricos
+        data = df.values.astype(float)
+
+    x = data[:, 0]
+    y = data[:, 1]
     
 ##------------------------------------------------------------------
 ## FIT with initial shape  DATA 1 GAUSSIAN
