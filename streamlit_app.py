@@ -10,7 +10,7 @@ import numpy as np
 #import sys
 import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
-from scipy.integrate import trapz, simps
+from scipy.integrate import trapezoid, simps
 from scipy.signal import savgol_filter
 
 
@@ -37,7 +37,7 @@ if uploaded_file is not None:
     if uploaded_file.endswith('.xlsx') or uploaded_file.endswith('.xls'):
             df = pd.read_excel(uploaded_file)
     else:
-            df = pd.read_csv(uploaded_file, delimiter='\t', engine='python')
+            df = pd.read_csv(uploaded_file, delimiter=';', engine='python')
         
         # Convertir a numpy array y asegurar tipos numéricos
     data = df.values.astype(float)
@@ -107,8 +107,8 @@ if uploaded_file is not None:
     
     # CALCULATE INTEGRALS
 
-    totalarea=trapz(y, x)
-    gaussarea=trapz(Gaussian(x, *popt),x)
+    totalarea=trapezoid(y, x)
+    gaussarea=trapezoid(Gaussian(x, *popt),x)
     percentage=100*gaussarea/totalarea
     djcoeff=gaussarea/totalarea
     
