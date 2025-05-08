@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
 from scipy.integrate import trapezoid, simps
 from scipy.signal import savgol_filter
-
+import pandas as pd
 
 ## Read data  -> read Ascii file -> reshape
 #datain=sys.argv[1]
@@ -33,7 +33,7 @@ if uploaded_file is not None:
     #x, y   = np.genfromtxt( uploaded_file,  delimiter="\t", unpack=True)
     #st.write(x, y)
     
-    import pandas as pd
+    
     if uploaded_file.endswith('.xlsx') or uploaded_file.endswith('.xls'):
             df = pd.read_excel(uploaded_file)
     else:
